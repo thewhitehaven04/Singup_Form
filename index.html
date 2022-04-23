@@ -6,14 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./style.css" />
-    <link href="./fonts/Mukta-Regular.ttf" rel="stylesheet" />
     <title>Sign-Up Form</title>
   </head>
   <body>
     <div class="grid_30_70_split">
       <div class="image">
         <div class="logo__darken"></div>
-        <footer class="text-centered white font-0_7rem">
+        <footer class="text-centered white font-0_9rem">
           Photo by
           <a class="underscored white" href="https://unsplash.com/@roanlavery"
             >Roan Lavery</a
@@ -22,91 +21,82 @@
           <a class="underscored white" href="https://unsplash.com">Unsplash</a>
         </footer>
       </div>
-      <div class="form">
+      <div class="column-flex">
         <header class="font-1_2rem left-padded-30">
           This is not a real online service! You need something like this in
           your life to help you realize your deepest dreams.<br />
-          Sign up now to get started!
-          <p>You know you want to.</p>
+          Sign up <em>now</em> to get started!
+          <p>You <em>know</em> you want to.</p>
         </header>
-        <main class="left-padded-30 vertically-padded-20 bottom-shadowed-2">
-          <span>Let's do this!</span>
-          <form method="post">
-            <p class="width-500 row-flex gap-40">
-              <span>
+        <form method="post">
+          <main class="left-padded-30 padded-v-20 bottom-shadowed-2">
+            <div class="margin-bot-30">Let's do this!</div>
+            <div class="column-flex margin-bot-30">
+              <p class="width-500 row-flex gap-40">
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   id="first_name"
                   name="first_name"
                   type="text"
-                  placeholder="John"
-                  data-name="FIRST NAME"
-                  class=".captioned"
+                  required
                 />
-              </span>
-              <span>
+                <span data-name="First Name"></span>
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   type="text"
                   id="last_name"
                   name="last_name"
-                  data-name="LAST NAME"
-                  class=".captioned"
-                  placeholder="Smith"
+                  required
                 />
-              </span>
-            </p>
-            <p class="width-500 row-flex gap-40">
-              <span>
+                <span data-name="Last Name"></span>
+              </p>
+              <p class="width-500 row-flex gap-40">
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   type="email"
                   name="email"
                   id="email"
-                  data-name="EMAIL"
-                  class=".captioned"
-                  placeholder="johnsmith@me.com"
+                  required
                 />
-              </span>
-              <span>
+                <span data-name="Email"></span>
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   type="tel"
                   name="phone"
                   id="phone"
-                  data-name="PHONE"
-                  class=".captioned"
-                  placeholder="+78005553535"
+                  pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"
+                  required
                 />
-              </span>
-            </p>
-            <p class="width-500 row-flex gap-40">
-              <span>
+                <span data-name="Phone"></span>
+              </p>
+              <p class="width-500 row-flex gap-40 margin-bot-50">
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   type="password"
                   id="password"
                   name="password"
-                  data-name="PASSWORD"
-                  class=".captioned"
+                  required
                 />
-              </span>
-              <span>
+                <span data-name="Password"></span>
                 <input
-                  class="width-250 height-1_2rem"
+                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
                   type="password"
                   id="confirm_password"
                   name="confirm_password"
-                  data-name="CONFIRM PASSWORD"
-                  class=".captioned"
+                  required
                 />
-              </span>
-            </p>
-
-            <button type="submit">Create account</button>
+                <span data-name="Confirm password"></span>
+              </p>
+            </div>
+            <button
+              type="submit"
+              class="border-radius-4 padding-v-5 padding-h-15 background-green white font-1_2rem"
+            >
+              Create account
+            </button>
             <p>Already have an account? <a href="">Log in</a></p>
-          </form>
-        </main>
+          </main>
+        </form>
       </div>
     </div>
   </body>
