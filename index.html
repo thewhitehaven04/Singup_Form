@@ -12,7 +12,7 @@
     <div class="grid_30_70_split">
       <div class="image">
         <div class="logo__darken"></div>
-        <footer>
+        <footer class="text-centered">
           Photo by
           <a class="underscored white" href="https://unsplash.com/@roanlavery"
             >Roan Lavery</a
@@ -22,44 +22,61 @@
         </footer>
       </div>
       <div class="form">
-        <header class="font-12rem">
-          <p>
-            This is not a real online service! You need something like this in
-            your life to help you realize your deepest dreams.
-          </p>
+        <header class="font-1_2rem">
+          This is not a real online service! You need something like this in
+          your life to help you realize your deepest dreams.<br />
           Sign up now to get started!
           <p>You know you want to.</p>
         </header>
         <main class="left-padded-30 vertically-padded-20">
           <form method="post">
-            <p>
-              <label for="first_name">First Name</label>
-              <input
-                id="first_name"
-                name="first_name"
-                type="text"
-                placeholder="John"
-              />
-              <label for="last_name">Last Name</label>
-              <input type="text" id="last_name" name="last_name" />
+            <p class="width-500 row-flex">
+              <span>
+                <label for="first_name" class="uppercase">First Name</label>
+                <input
+                  id="first_name"
+                  name="first_name"
+                  type="text"
+                  placeholder="John"
+                  data-name="FIRST NAME"
+                />
+              </span>
+              <span>
+                <label for="last_name" class="capital">Last Name</label>
+                <input
+                  class="width-150"
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  data-name="LAST NAME"
+                />
+              </span>
             </p>
-            <p>
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" />
-
-              <label for="phone">Phone</label>
-              <input type="tel" name="phone" id="phone" />
+            <p class="width-500">
+              <span>
+                <label for="email" class="uppercase">Email</label>
+                <input class="width-150" type="email" name="email" id="email" data-name="EMAIL"/>
+              </span>
+              <span>
+                <label for="phone" class="uppercase">Phone</label>
+                <input class="width-150" type="tel" name="phone" id="phone" data-name="PHONE"/>
+              </span>
             </p>
-            <p>
-              <label for="pass">Password</label>
-              <input type="password" id="password" name="password" />
-
-              <label for="confirm_password">Confirm password</label>
-              <input
-                type="password"
-                id="confirm_password"
-                name="confirm_password"
-              />
+            <p class="width-500">
+              <span>
+                <label for="pass" class="uppercase">Password</label>
+                <input type="password" id="password" name="password" data-name="PASSWORD"/>
+              </span>
+              <span>
+                <label for="confirm_password" class="uppercase" data-name="CONFIRN PASSWORD"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  id="confirm_password"
+                  name="confirm_password"
+                />
+              </span>
             </p>
 
             <button type="submit">Create account</button>

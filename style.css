@@ -1,3 +1,5 @@
+/** The following stylesheet follows utility CSS paradigm */
+
 html {
   box-sizing: border-box;
 }
@@ -23,6 +25,10 @@ body {
 
 .font-1_2rem {
   font-size: 1.2rem;
+}
+
+.text-centered {
+  text-align: center;
 }
 
 .left-padded-30 {
@@ -57,3 +63,19 @@ body {
   height: 100vh;
 }
 
+.width-150 {
+  width: 150px;
+}
+
+.width-500 {
+  width: 500px;
+}
+
+.row-flex {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
