@@ -6,75 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./style.css" />
+    <link href="./fonts/Mukta-Regular.ttf" rel="stylesheet" />
     <title>Sign-Up Form</title>
   </head>
   <body>
     <div class="grid_30_70_split">
       <div class="image">
         <div class="logo__darken"></div>
-        <footer class="text-centered">
+        <footer class="text-centered white font-0_7rem">
           Photo by
           <a class="underscored white" href="https://unsplash.com/@roanlavery"
             >Roan Lavery</a
           >
           on
-          <a href="https://unsplash.com"></a>
+          <a class="underscored white" href="https://unsplash.com">Unsplash</a>
         </footer>
       </div>
       <div class="form">
-        <header class="font-1_2rem">
+        <header class="font-1_2rem left-padded-30">
           This is not a real online service! You need something like this in
           your life to help you realize your deepest dreams.<br />
           Sign up now to get started!
           <p>You know you want to.</p>
         </header>
-        <main class="left-padded-30 vertically-padded-20">
+        <main class="left-padded-30 vertically-padded-20 bottom-shadowed-2">
+          <span>Let's do this!</span>
           <form method="post">
-            <p class="width-500 row-flex">
+            <p class="width-500 row-flex gap-40">
               <span>
-                <label for="first_name" class="uppercase">First Name</label>
                 <input
+                  class="width-250 height-1_2rem"
                   id="first_name"
                   name="first_name"
                   type="text"
                   placeholder="John"
                   data-name="FIRST NAME"
+                  class=".captioned"
                 />
               </span>
               <span>
-                <label for="last_name" class="capital">Last Name</label>
                 <input
-                  class="width-150"
+                  class="width-250 height-1_2rem"
                   type="text"
                   id="last_name"
                   name="last_name"
                   data-name="LAST NAME"
+                  class=".captioned"
+                  placeholder="Smith"
                 />
               </span>
             </p>
-            <p class="width-500">
+            <p class="width-500 row-flex gap-40">
               <span>
-                <label for="email" class="uppercase">Email</label>
-                <input class="width-150" type="email" name="email" id="email" data-name="EMAIL"/>
+                <input
+                  class="width-250 height-1_2rem"
+                  type="email"
+                  name="email"
+                  id="email"
+                  data-name="EMAIL"
+                  class=".captioned"
+                  placeholder="johnsmith@me.com"
+                />
               </span>
               <span>
-                <label for="phone" class="uppercase">Phone</label>
-                <input class="width-150" type="tel" name="phone" id="phone" data-name="PHONE"/>
+                <input
+                  class="width-250 height-1_2rem"
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  data-name="PHONE"
+                  class=".captioned"
+                  placeholder="+78005553535"
+                />
               </span>
             </p>
-            <p class="width-500">
+            <p class="width-500 row-flex gap-40">
               <span>
-                <label for="pass" class="uppercase">Password</label>
-                <input type="password" id="password" name="password" data-name="PASSWORD"/>
+                <input
+                  class="width-250 height-1_2rem"
+                  type="password"
+                  id="password"
+                  name="password"
+                  data-name="PASSWORD"
+                  class=".captioned"
+                />
               </span>
               <span>
-                <label for="confirm_password" class="uppercase" data-name="CONFIRN PASSWORD"
-                  >Confirm Password</label
-                >
                 <input
+                  class="width-250 height-1_2rem"
                   type="password"
                   id="confirm_password"
                   name="confirm_password"
+                  data-name="CONFIRM PASSWORD"
+                  class=".captioned"
                 />
               </span>
             </p>
