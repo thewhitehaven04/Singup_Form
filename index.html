@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./normalize.css" />
     <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
     <title>Sign-Up Form</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
           <a class="underscored white" href="https://unsplash.com">Unsplash</a>
         </footer>
       </div>
-      <div class="column-flex">
+      <div class="column-flex flex-center">
         <header class="font-1_2rem left-padded-30">
           This is not a real online service! You need something like this in
           your life to help you realize your deepest dreams.<br />
@@ -29,12 +30,14 @@
           <p>You <em>know</em> you want to.</p>
         </header>
         <form method="post">
-          <main class="left-padded-30 padded-v-20 bottom-shadowed-2">
-            <div class="margin-bot-30">Let's do this!</div>
-            <div class="column-flex margin-bot-30">
+          <main class="padded-v-30">
+            <div
+              class="column-flex margin-bot-30 left-padded-30 padded-v-30 bottom-shadowed-2"
+            >
+              <div class="font-1_2rem margin-bot-30">Let's do this!</div>
               <p class="width-500 row-flex gap-40">
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   id="first_name"
                   name="first_name"
                   type="text"
@@ -42,7 +45,7 @@
                 />
                 <span data-name="First Name"></span>
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="text"
                   id="last_name"
                   name="last_name"
@@ -52,7 +55,7 @@
               </p>
               <p class="width-500 row-flex gap-40">
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="email"
                   name="email"
                   id="email"
@@ -60,42 +63,46 @@
                 />
                 <span data-name="Email"></span>
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="tel"
                   name="phone"
                   id="phone"
-                  pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"
+                  pattern="[\+]\d{1}[\(]\d{3}[\)]\d{7}"
                   required
                 />
                 <span data-name="Phone"></span>
               </p>
               <p class="width-500 row-flex gap-40 margin-bot-50">
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="password"
                   id="password"
                   name="password"
+                  minlength="8"
                   required
                 />
                 <span data-name="Password"></span>
                 <input
-                  class="width-250 height-1_4rem captioned border-thin border-radius-4 border-bluish"
+                  class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="password"
                   id="confirm_password"
                   name="confirm_password"
+                  minlength="8"
                   required
                 />
                 <span data-name="Confirm password"></span>
               </p>
             </div>
+          </main>
+          <div class="left-padded-30">
             <button
               type="submit"
-              class="border-radius-4 padding-v-5 padding-h-15 background-green white font-1_2rem"
+              class="border-radius-4 padded-v-5 padding-h-15 background-green white font-1_2rem"
             >
               Create account
             </button>
             <p>Already have an account? <a href="">Log in</a></p>
-          </main>
+          </div>
         </form>
       </div>
     </div>
