@@ -35,7 +35,7 @@ input:focus {
 }
 
 input:invalid:not(:empty) {
-  border-color: var(--red);
+  border: 1px solid var(--red);
 }
 
 input[type='password'] + span::after {
