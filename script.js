@@ -1,4 +1,4 @@
-const paragraphPasswordInputs = document.querySelector('p.margin-bot-50');
+const formInputs = document.querySelector('p.margin-bot-50');
 const password = document.querySelector('#password');
 const confirmPassword = document.querySelector('#confirm_password');
 

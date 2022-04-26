@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
     <title>Sign-Up Form</title>
   </head>
   <body>
     <div class="grid_30_70_split">
-      <div class="image">
-        <div class="logo__darken"></div>
+      <div class="image absolute column-flex flex-end align-center">
+        <div class="logo__dark-background relative bottom-40">
+          <div class="logo margin-center"></div>
+          <div class="font-norse font-6rem white text-centered">ODIN</div>
+        </div>
         <footer class="text-centered white font-0_9rem">
           Photo by
           <a class="underscored white" href="https://unsplash.com/@roanlavery"
@@ -35,12 +38,13 @@
               class="column-flex margin-bot-30 left-padded-30 padded-v-30 bottom-shadowed-2"
             >
               <div class="font-1_2rem margin-bot-30">Let's do this!</div>
-              <p class="width-500 row-flex gap-40">
+              <p class="row-flex gap-40">
                 <input
                   class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   id="first_name"
                   name="first_name"
                   type="text"
+                  value=" "
                   required
                 />
                 <span data-name="First Name"></span>
@@ -49,16 +53,18 @@
                   type="text"
                   id="last_name"
                   name="last_name"
+                  value=" "
                   required
                 />
                 <span data-name="Last Name"></span>
               </p>
-              <p class="width-500 row-flex gap-40">
+              <p class="row-flex gap-40">
                 <input
                   class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="email"
                   name="email"
                   id="email"
+                  value=" "
                   required
                 />
                 <span data-name="Email"></span>
@@ -67,12 +73,13 @@
                   type="tel"
                   name="phone"
                   id="phone"
+                  value=" "
                   pattern="[\+]\d{1}[\(]\d{3}[\)]\d{7}"
                   required
                 />
                 <span data-name="Phone"></span>
               </p>
-              <p class="width-500 row-flex gap-40 margin-bot-50">
+              <p class="row-flex gap-40 margin-bot-50">
                 <input
                   class="width-250 height-1_7rem captioned border-thin border-radius-4 border-bluish font-0_9rem"
                   type="password"
