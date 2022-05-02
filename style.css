@@ -39,8 +39,17 @@ input:focus {
   box-shadow: 0px 3px 5px 1px rgba(127, 127, 127, 0.4);
 }
 
-input:user-invalid {
+input:invalid {
   border: 1px solid var(--red);
+}
+
+input:valid {
+  border: 1px solid var(--green);
+}
+
+input[value=''],
+input[type='password'] {
+  border: 1px solid var(--bluish);
 }
 
 input[type='password'] + span::after {
@@ -52,20 +61,11 @@ input[type='password'] + span::after {
   display: none;
 }
 
-input[type='text'] + span::after,
-input[type='tel'] + span::after,
-input[type='email'] + span::after {
+input[type='text'] + span::after {
   position: absolute;
   font-size: 30px;
   top: -4px;
   left: -25px;
-}
-
-input[type='text']:valid + span::after,
-input[type='tel']:valid + span::after,
-input[type='email']:valid + span::after {
-  content: '✓';
-  color: var(--green);
 }
 
 input[type='password'] + span::after {
