@@ -33,7 +33,7 @@
           <p>You <em>know</em> you want to.</p>
         </header>
         <form method="post">
-          <main class="padded-v-30">
+          <main>
             <div
               class="column-flex margin-bot-30 left-padded-30 padded-v-30 bottom-shadowed-2"
             >
@@ -44,7 +44,6 @@
                   id="first_name"
                   name="first_name"
                   type="text"
-                  value=" "
                   required
                 />
                 <span data-name="First Name"></span>
@@ -53,7 +52,6 @@
                   type="text"
                   id="last_name"
                   name="last_name"
-                  value=" "
                   required
                 />
                 <span data-name="Last Name"></span>
@@ -64,7 +62,6 @@
                   type="email"
                   name="email"
                   id="email"
-                  value=" "
                   required
                 />
                 <span data-name="Email"></span>
@@ -73,7 +70,6 @@
                   type="tel"
                   name="phone"
                   id="phone"
-                  value=" "
                   pattern="[\+]\d{1}[\(]\d{3}[\)]\d{7}"
                   required
                 />
@@ -99,16 +95,22 @@
                 />
                 <span data-name="Confirm password"></span>
               </p>
+              <div
+                class="validation-messages width-400 flex-column border-radius-4 border-bluish height-6rem font-0_9rem"
+              ></div>
             </div>
           </main>
           <div class="left-padded-30">
             <button
               type="submit"
-              class="border-radius-4 padded-v-5 padding-h-15 background-green white font-1_2rem"
+              class="bottom-shadowed-2 border-radius-4 padding-v-10 5 padding-h-50 background-green white font-0_9rem"
             >
               Create account
             </button>
-            <p>Already have an account? <a href="">Log in</a></p>
+            <p>
+              Already have an account?
+              <a class="green no-underscore" href=""><b>Log in</b></a>
+            </p>
           </div>
         </form>
       </div>

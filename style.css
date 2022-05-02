@@ -39,7 +39,7 @@ input:focus {
   box-shadow: 0px 3px 5px 1px rgba(127, 127, 127, 0.4);
 }
 
-input:invalid {
+input:user-invalid {
   border: 1px solid var(--red);
 }
 
@@ -52,8 +52,25 @@ input[type='password'] + span::after {
   display: none;
 }
 
-input[type='password']:invalid + span::after {
-  content: 'Passwords do not match';
+input[type='text'] + span::after,
+input[type='tel'] + span::after,
+input[type='email'] + span::after {
+  position: absolute;
+  font-size: 30px;
+  top: -4px;
+  left: -25px;
+}
+
+input[type='text']:valid + span::after,
+input[type='tel']:valid + span::after,
+input[type='email']:valid + span::after {
+  content: '✓';
+  color: var(--green);
+}
+
+input[type='password'] + span::after {
+  color: red;
+  content: '';
 }
 
 button {
@@ -103,7 +120,7 @@ body {
 }
 
 .align-center {
-  align-items: center; 
+  align-items: center;
 }
 
 .row-flex {
@@ -153,6 +170,11 @@ body {
   padding-top: 10px;
 }
 
+.padding-h-50 {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 /** Margin styles */
 .margin-bot-30 {
   margin-bottom: 30px;
@@ -171,9 +193,17 @@ body {
   width: 100%;
 }
 
+.width-400 {
+  width: 400px;
+}
+
 /** Height styles */
 .height-1_7rem {
   height: 1.7rem;
+}
+
+.height-6rem {
+  height: 6rem;
 }
 
 /** Text styles */
@@ -183,6 +213,10 @@ body {
 
 .underscored {
   text-decoration: underline;
+}
+
+.no-underscore {
+  text-decoration: none;
 }
 
 .uppercase {
@@ -210,6 +244,21 @@ body {
 .white {
   color: white;
 }
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}
+
+/** List styles */
+.list-cross-marker {
+  list-style-type: '❌  ';
+}
+
+/** Background styles */
 
 .background-green {
   background-color: var(--green);
@@ -247,11 +296,6 @@ body {
   left: -18em;
   content: attr(data-name);
   text-transform: uppercase;
-}
-
-input[type='password'] + span::after {
-  color: red;
-  content: '';
 }
 
 .error {

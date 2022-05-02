@@ -1,35 +1,71 @@
 const formInputs = document.querySelector('p.margin-bot-50');
-const password = document.querySelector('#password');
-const confirmPassword = document.querySelector('#confirm_password');
 
-/**
- * Tests whether the password is the same in both the password and confirm password elements
- * @param {Element} passwordElement the input that stores the password value
- * @param {Element} confirmPasswordElement the input element that stores the confirm password value
- */
-function isSamePassword(passwordElement, confirmPasswordElement) {
-  const pass = passwordElement.value;
-  const confirm = confirmPasswordElement.value;
-  return pass === confirm;
-}
+const validationState = (function () {
+  const state = {
+    isSamePassword: false,
+    hasCapitals: false,
+    isAboveMinimalLength: false,
+  };
 
-const isAboveMinimalLength = function () {
-  return password.value.length > password.getAttribute('minlength');
-};
+  const paragraphPasswordInputs = document.querySelector('main p:last-of-type');
+  const password = document.querySelector('#password');
+  const confirmPassword = document.querySelector('#confirm_password');
+  const validationRoot = document.querySelector('.validation-messages');
 
-const passwordChangeEventHandler = function (event) {
-  const errorClass = 'error';
-  if (!(isSamePassword(password, confirmPassword) && isAboveMinimalLength())) {
-    password.classList.add(errorClass);
-    confirmPassword.classList.add(errorClass);
-  } else {
-    password.classList.remove(errorClass);
-    confirmPassword.classList.remove(errorClass);
-  }
-};
+  const samePassword = () => {
+    state.isSamePassword = password.value == confirmPassword.value;
+  };
 
-paragraphPasswordInputs.addEventListener('change', (event) => {
-  if (event.target == password || event.target == confirmPassword) {
-    passwordChangeEventHandler(event);
-  }
-});
+  const containsCapitals = () => {
+    state.hasCapitals = password.value.toLowerCase() != password.value;
+  };
+
+  const aboveMinimalLength = () => {
+    state.isAboveMinimalLength =
+      password.value.length > password.getAttribute('minlength');
+  };
+
+  const clean = function () {
+    const rootChildren = Array.from(validationRoot.children);
+    rootChildren.forEach((child) => validationRoot.removeChild(child));
+  };
+
+  const render = function () {
+    clean();
+
+    const stateMessageMapping = {
+      isSamePassword: 'Password do not match',
+      isAboveMinimalLength: 'The password must be longer than 8 characters',
+      hasCapitals: 'The password must contain at least one capital letter',
+    };
+
+    const conditions = document.createElement('ul');
+    for (const prop in state) {
+      if (!state[prop]) {
+        const li = document.createElement('li');
+
+        // style error messages
+        li.classList.add('red');
+        li.classList.add('list-cross-marker');
+
+        // append the message text
+        li.innerText = stateMessageMapping[prop];
+        conditions.appendChild(li);
+      }
+    }
+    validationRoot.append(conditions);
+  };
+
+  const updateState = function () {
+    samePassword();
+    containsCapitals();
+    aboveMinimalLength();
+    render();
+  };
+
+  paragraphPasswordInputs.addEventListener('change', (event) => {
+    if (event.target == password || event.target == confirmPassword) {
+      updateState();
+    }
+  });
+})();
